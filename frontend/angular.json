@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "drip-scoreboard:build"
+            "browserTarget": "drip-scoreboard:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

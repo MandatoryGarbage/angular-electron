@@ -1,3 +1,4 @@
+import { ScoreboardService } from './../services/scoreboard/scoreboard.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 var XMLWriter = require('xml-writer');
@@ -8,7 +9,7 @@ var XMLWriter = require('xml-writer');
 })
 export class MinimumViableProductComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private scoreboardService: ScoreboardService) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -40,5 +41,6 @@ export class MinimumViableProductComponent implements OnInit {
     xw.endElement();
 
     console.log(xw.toString());
+    this.scoreboardService.saveFile('filename').subscribe();
   }
 }
