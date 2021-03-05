@@ -1,15 +1,12 @@
+import { MinimumViableProductComponent } from './minimum-viable-product/minimum-viable-product.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components';
 
-import { HomeRoutingModule } from './home/home-routing.module';
-import { DetailRoutingModule } from './detail/detail-routing.module';
-
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: MinimumViableProductComponent
   },
   {
     path: '**',
@@ -19,10 +16,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-    HomeRoutingModule,
-    DetailRoutingModule
-  ],
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
