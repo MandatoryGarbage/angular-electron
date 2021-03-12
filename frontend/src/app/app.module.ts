@@ -10,15 +10,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { TextInputComponent } from './controls/text-input/text-input.component';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ControlNameComponent } from './dialog/control-name/control-name.component';
 
 @NgModule({
-  declarations: [AppComponent, MinimumViableProductComponent],
+  declarations: [
+    AppComponent,
+    MinimumViableProductComponent,
+    TextInputComponent,
+    ScoreboardComponent,
+    ControlNameComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,

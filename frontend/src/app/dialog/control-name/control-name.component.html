@@ -1,0 +1,12 @@
+<div fxLayout='column' fxLayoutGap='20px'>
+  <h2 mat-dialog-title>Name your control:</h2>
+  <div>
+    <mat-form-field>
+      <input matInput [(ngModel)]='controlName' />
+    </mat-form-field>
+  </div>
+  <div fxLayout='row-reverse'>
+    <button mat-raised-button color='primary' (click)='addControl()'>Add Control</button>
+    <div class="fill-remaining-space"></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div fxLayout='column' fxLayoutGap='20px'>
+  <div fxLayout='row' fxLayoutGap='20px'>
+    <div>
+      <h1>Scoreboard</h1>
+    </div>
+    <div class='fill-remaining-space'></div>
+    <div>
+      <button mat-raised-button color='primary' [matMenuTriggerFor]="menu">+</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)='addTextControl()'>Text</button>
+        <button mat-menu-item>Number</button>
+        <button mat-menu-item>Image</button>
+      </mat-menu>
+    </div>
+  </div>
+  <div>
+    <div *ngFor='let item of scoreboard.items'>
+      {{item.type}}
+      <div *ngIf="item.type === itemTypeEnum.CONTROL">
+        CONTROL
+      </div>
+      <div *ngIf="item.type === itemTypeEnum.GROUP">
+        GROUP
+      </div>
+    </div>
+  </div>
+</div>
